@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ElectroCart — everyday technology, thoughtfully selected." />
+  <title>ElectroCart — Technology, made simple</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="announcement">GOOD TECH. GOOD DAYS.</div>
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-mark">e</span> electro<span>cart.</span></a>
+    <nav class="main-nav"><a href="#products">Shop</a><a href="#benefits">Why ElectroCart</a><a href="#cart">Your cart</a></nav>
+    <div class="header-actions"><span id="user-label" class="user-label">Guest</span><button id="auth-open" class="text-button">Sign in</button><button id="cart-jump" class="cart-button">Cart <span id="cart-count">0</span></button></div>
+  </header>
+
+  <main id="home">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> THE EVERYDAY TECH EDIT</p>
+        <h1>Good tech.<br /><em>Better living.</em></h1>
+        <p class="hero-description">The devices you reach for every day, picked to make work, play and everything in between feel a little easier.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#products">Explore products <span>↗</span></a><span class="micro-note">A little upgrade goes a long way.</span></div>
+        <div class="hero-meta"><div><strong>01</strong><span>Thoughtful picks</span></div><div><strong>02</strong><span>Everyday essentials</span></div><div><strong>03</strong><span>Easy checkout</span></div></div>
+      </div>
+      <div class="hero-art" aria-label="Featured electronics">
+        <div class="art-note note-left"><span class="note-dot"></span> MADE FOR YOUR EVERYDAY</div>
+        <div class="yellow-orb"></div>
+        <div class="device-card tablet-card"><div class="tablet-screen"><div class="screen-top"><span>electrocart.</span><span>✳</span></div><div class="screen-title">Find your<br />next favourite.</div><div class="screen-product"><div class="mini-headphone"></div><div><b>Sound, in focus.</b><small>Wireless audio collection</small></div></div><div class="screen-bottom"><span>CURATED FOR YOU</span><span>↗</span></div></div></div>
+        <div class="device-card phone-card"><div class="phone-screen"><div class="phone-camera"></div><div class="phone-image"></div><b>Less noise.<br />More you.</b><small>Studio wireless</small></div></div>
+        <div class="floating-chip">✦ &nbsp; THE SMARTER SIDE OF SHOPPING</div>
+        <div class="art-caption">TECH THAT FITS<br />YOUR LIFE.</div>
+      </div>
+    </section>
+
+    <section class="benefits shell" id="benefits">
+      <div class="benefit"><div class="benefit-icon">◫</div><div><h3>Made to fit</h3><p>Shop from any screen, wherever you are.</p></div></div>
+      <div class="benefit"><div class="benefit-icon">⌁</div><div><h3>Useful by design</h3><p>Clear details. No unnecessary noise.</p></div></div>
+      <div class="benefit"><div class="benefit-icon">↗</div><div><h3>Easy to explore</h3><p>Find your pick and add it in a click.</p></div></div>
+    </section>
+
+    <section class="products-section shell" id="products">
+      <div class="section-heading"><div><p class="eyebrow">THE COLLECTION</p><h2>Small things.<br /><em>Big difference.</em></h2></div><div class="shop-tools"><input id="search" type="search" placeholder="Search products" aria-label="Search products" /><select id="category-filter" aria-label="Filter by category"><option value="">All categories</option><option>Phones</option><option>Laptops</option><option>Audio</option><option>Wearables</option><option>Accessories</option><option>Gaming</option></select></div></div>
+      <div id="auth-notice" class="notice">Sign in to view the live catalogue and manage products. Your product API is protected by JWT authentication.</div>
+      <div id="product-grid" class="product-grid"><div class="empty-state">Sign in to load the product collection.</div></div>
+      <div id="manage-panel" class="manage-panel hidden"><div><p class="eyebrow">YOUR CATALOGUE</p><h3>Add a product</h3></div><form id="product-form" class="product-form"><input name="name" placeholder="Product name" required maxlength="100" /><input name="price" type="number" min="0" step="0.01" placeholder="Price (₹)" required /><select name="category" required><option value="">Category</option><option>Phones</option><option>Laptops</option><option>Audio</option><option>Wearables</option><option>Accessories</option><option>Gaming</option></select><input name="stock" type="number" min="0" step="1" placeholder="Stock" required /><input name="image" type="url" placeholder="Image URL (optional)" /><input name="description" placeholder="Short description" required maxlength="1000" /><button class="button button-dark" type="submit">Add product +</button></form><p class="form-hint">This demo lets any signed-in user create, edit and delete catalogue items. In a real store, restrict these actions to an admin role.</p></div>
+    </section>
+
+    <section class="cart-section shell" id="cart">
+      <div class="cart-heading"><div><p class="eyebrow">READY WHEN YOU ARE</p><h2>Your <em>cart.</em></h2></div><button id="clear-cart" class="text-button">Clear cart</button></div>
+      <div class="cart-table-wrap"><table class="cart-table"><thead><tr><th>PRODUCT</th><th>PRICE</th><th>QUANTITY</th><th>TOTAL</th><th></th></tr></thead><tbody id="cart-items"><tr><td colspan="5" class="cart-empty">Your cart is waiting for something good.</td></tr></tbody></table></div>
+      <div class="cart-summary"><span>Subtotal <small>Shipping calculated at checkout</small></span><strong id="cart-subtotal">₹0</strong><button id="checkout" class="button button-yellow">Continue to checkout <span>↗</span></button></div>
+      <p class="checkout-note" id="checkout-note">Demo storefront · Checkout is not connected to a payment provider.</p>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#home"><span class="brand-mark">e</span> electro<span>cart.</span></a><p>Technology for the way you live.</p><span>© 2026 ElectroCart</span></footer>
+
+  <div id="auth-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="auth-title"><div class="modal-backdrop" data-close></div><div class="modal-card"><button class="modal-close" data-close aria-label="Close">×</button><p class="eyebrow">WELCOME TO ELECTROCART</p><h2 id="auth-title">Good to see you.</h2><div class="auth-tabs"><button class="active" data-mode="login">Sign in</button><button data-mode="register">Create account</button></div><form id="auth-form"><div id="name-field" class="hidden"><label>Your name</label><input name="name" placeholder="e.g. Rahul" maxlength="60" /></div><label>Email address</label><input name="email" type="email" placeholder="you@example.com" required /><label>Password</label><input name="password" type="password" placeholder="At least 8 characters" required minlength="8" /><button class="button button-dark auth-submit" type="submit">Sign in <span>↗</span></button></form><p id="auth-message" class="auth-message"></p><p class="security-note">Your password is securely hashed before it is stored.</p></div></div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
